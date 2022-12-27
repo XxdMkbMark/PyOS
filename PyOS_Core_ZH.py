@@ -28,11 +28,11 @@ def web(url):
     webbrowser.open(url, new=0, autoraise=True)
 
 
-cmd = ["help", "about", "ckupd", "catalog", "run mogodb", "run calc", "shutdown", "catalog -a", "run pybrowser"]
+cmd = ["help", "about", "ckupd", "catalog", "run mongodb", "run calc", "shutdown", "catalog -a", "run pybrowser"]
 print("┌────────────────────┐")
 print("│     欢迎使用PyOS    │")
 print("└────────────────────┘")
-print("PyOS，一个为Pyhon设计的轻量操作系统")
+print("PyOS，一个为Python设计的轻量操作系统")
 print("请稍候，正在加载数据...")
 time.sleep(0.5)
 print("error: no such file or directory")
@@ -67,7 +67,6 @@ print("┌──────────┐")
 print("│   PyOS   │")
 print("└──────────┘")
 print("您可以输入“help”获取PyOS的全部命令")
-print("这是PyOS的预发布版，可能会包含一些导致崩溃的bug，自担风险使用")
 command = input(">")
 while True:
     while command not in cmd:
@@ -82,13 +81,14 @@ while True:
                 if cmd[i] == "help":
                     time.sleep(0.5)
                     print(
-                        "help   显示此菜单\nabout   关于本系统\ncatalog   查看可运行的所有软件\n    -a   查看已安装的所有软件\nshutdown   退出系统\nrun <软件名>   运行指定软件\nckupd   检查系统更新")
+                        "help   显示此菜单\nabout   关于本系统\ncatalog   查看可运行的所有软件\n    -a   查看已安装的所有软件\nshutdown   退出系统\nrun "
+                        "<软件名>   运行指定软件\nckupd   检查系统更新")
                     break
                 elif cmd[i] == "about":
                     time.sleep(0.5)
-                    print("================")
-                    print("====关于PyOS====")
-                    print("================")
+                    print("┌──────────────┐")
+                    print("│   关于PyOS   │")
+                    print("└──────────────┘")
                     print("PyOS")
                     print("XxdMkb_Mark")
                     print("版本 1.9.6")
@@ -119,7 +119,7 @@ while True:
                     time.sleep(1)
                     print("++++++++++++++")
                     print("+. . . . . . +")
-                    print("+. .计算器. .+")
+                    print("+. .计算器. . +")
                     print("+. . v1.1. . +")
                     print("+. by HAHA . +")
                     print("+. . . . . . +")
