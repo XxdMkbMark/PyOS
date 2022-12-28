@@ -34,14 +34,18 @@ print("│     欢迎使用PyOS    │")
 print("└────────────────────┘")
 print("PyOS，一个为Python设计的轻量操作系统")
 print("请稍候，正在加载数据...")
-time.sleep(0.5)
-print("error: no such file or directory")
 time.sleep(0.7)
 print("┌────────────────────┐")
 print("│   PyOS初始化向导    │")
 print("└────────────────────┘")
 unm = input("请设置用户名:")
+while unm=="" or unm==" ":
+    print("用户名不合规")
+    unm = input("请设置用户名:")
 pwd = input("请设置密码:")
+while pwd=="" or pwd==" ":
+    print("密码不合规")
+    pwd = input("请设置密码:")
 repwd = input("请重复密码:")
 while pwd != repwd:
     repwd = input("密码错误，请重复密码:")
@@ -67,14 +71,15 @@ print("┌──────────┐")
 print("│   PyOS   │")
 print("└──────────┘")
 print("您可以输入“help”获取PyOS的全部命令")
-command = input(">")
 while True:
+    command = input(">")
+    if command == "":
+        continue
     while command not in cmd:
         print(
             "\033[31mTraceback (most recent call last):\n  File 'PyOS_Core.py', line 1, in <module>\n    " + command + "\nCommandError: Command '" + command + "' is not defined. Did you mean: 'help'?\033[0m")
         print()
         break
-    command = input(">")
     if command in cmd:
         for i in range(9):
             if command == cmd[i]:
@@ -90,8 +95,11 @@ while True:
                     print("│   关于PyOS   │")
                     print("└──────────────┘")
                     print("PyOS")
-                    print("XxdMkb_Mark")
-                    print("版本 1.9.6")
+                    print("项目发起：XxdMkb_Mark")
+                    print("合作开发：not_exist")
+                    print("ver 1.9.6_P20221228")
+                    print("支持与赞助：afdian.net/a/PythonOS")
+                    print("项目源码：https://github.com/XxdMkbMark/PyOS/releases")
                     print("© XxdMkb_Mark。保留所有权利")
                     print("感谢您使用本操作系统")
                     break
@@ -103,11 +111,11 @@ while True:
                     sys.exit(0)
                 elif cmd[i] == "catalog":
                     time.sleep(0.5)
-                    print("calc   计算器\npybrowser   Py浏览器")
+                    print("calculator   计算器\npybrowser   Py浏览器")
                     break
                 elif cmd[i] == "catalog -a":
                     time.sleep(0.5)
-                    print("mogodb   数据库\ncalc   计算器\npybrowser   Py浏览器\nsys   PyOS")
+                    print("mogodb   数据库\ncalculator   计算器\npybrowser   Py浏览器\nsys   PyOS")
                     break
                 elif cmd[i] == "run pybrowser":
                     time.sleep(1)
